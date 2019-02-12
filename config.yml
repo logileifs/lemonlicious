@@ -1,0 +1,7 @@
+---
+port: 8000
+host: 0.0.0.0
+app_name: lemo
+log_level: DEBUG
+db_host: localhost
+db_port: 28015

@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  rethink:
+    image: rethinkdb
+    expose:
+      - "28015"
+    ports:
+      - "28015:28015"  # Expose for debugging purposes.
+      - "9090:8080"
+
+  lemo:
+    image: lemo:latest
+    expose:
+      - "8000"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ${PWD}/config.prod.yml:/app/config.yml
+
+configs:
+  lemo-config:
+    file: ./config.yml
